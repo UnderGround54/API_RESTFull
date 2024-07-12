@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: symfony_app_media_planning
+    volumes:
+      - ./php/:/etc/apache2/sites-enabled
+      - ./:/var/www/symfony
+    ports:
+      - "9000:80"
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.11.6
+    container_name: mariadb
+    environment:
+      MYSQL_DATABASE: media_planning
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
