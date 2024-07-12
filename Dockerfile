@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libonig-dev \
     libxml2-dev \
+    cron \
     zip \
     unzip \
     git \
     nano \
-    vi \
+    vim \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
@@ -24,6 +25,10 @@ RUN a2enmod rewrite
 # Copy custom php.ini
 COPY php/php.ini /usr/local/etc/php/
 
+# Install Symfony CLI
+RUN curl -sS https://get.symfony.com/cli/installer | bash \
+    && mv /root/.symfony*/bin/symfony /usr/local/bin/symfony
+
 # Set working directory
 WORKDIR /var/www/symfony
 
@@ -33,16 +38,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy the existing application directory contents
 COPY . /var/www/symfony
 
+# Create the vendor directory if it doesn't exist
+RUN mkdir -p /var/www/symfony/var /var/www/symfony/vendor /var/www/symfony/public
+
 # Set permissions
-RUN chown -R www-data:www-data /var/www/symfony/var /var/www/symfony/vendor
-
-# Install Symfony dependencies as www-data user
-USER www-data
-
-RUN composer install --no-interaction
-
-# Revert back to root user to complete other tasks
-USER root
+RUN chown -R www-data:www-data /var/www/symfony/var /var/www/symfony/vendor /var/www/symfony/public
 
 # Expose port 80
 EXPOSE 80
