@@ -36,7 +36,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
     - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer install --no-interaction
     - name: Generate SSL Key for JWT
       run: php bin/console lexik:jwt:generate-keypair
     - name: Create Database
