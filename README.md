@@ -19,5 +19,9 @@ php bin/console d:m:m
 ```
 php bin/console d:f:l
 ```
+### générer clé de JWT 
+```
+php bin/console lexik:jwt:generate-keypair
+```
 ### Acceder aux application
 [Swagger](http://localhost:9000/api/doc)
