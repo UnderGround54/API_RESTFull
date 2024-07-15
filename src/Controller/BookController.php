@@ -31,20 +31,20 @@ class BookController extends AbstractController
           )
       )]
       #[OA\Parameter(
-          name:"page",
-          in:"query",
-          description:"La page que l'on veut récupérer",
+          name: "page",
+          description: "La page que l'on veut récupérer",
+          in: "query",
           schema: new OA\Schema(type:"int")
       )]
      
       #[OA\Parameter(
-          name:"limit",
-          in:"query",
-          description:"Le nombre d'éléments que l'on veut récupérer",
+          name: "limit",
+          description: "Le nombre d'éléments que l'on veut récupérer",
+          in: "query",
           schema: new OA\Schema(type:"int")
       )]
       #[OA\Tag(name:"Books")]
-     /** 
+     /**
      * Cette méthode permet de récupérer l'ensemble des livres.
      * @param BookRepository $bookRepository
      * @param SerializerInterface $serializer

@@ -24,12 +24,12 @@ class Book
     #[Groups(["getBooks", "getAuthors"])]
     #[Assert\NotBlank(message: "Le titre du livre est obligatoire")]
     #[Assert\Length(min: 1, max: 255, minMessage: "Le titre doit faire au moins {{ limit }} caractères", maxMessage: "Le titre ne peut pas faire plus de {{ limit }} caractères")]
-    #[OA\Property(type: 'string', maxLength: 255, description: 'Titre du livre')]
+    #[OA\Property(description: 'Titre du livre', type: 'string', maxLength: 255)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups(["getBooks", "getAuthors"])]
-    #[OA\Property(type: 'string', maxLength: 255, description: 'Couveture du livre')]
+    #[OA\Property(description: 'Couveture du livre', type: 'string', maxLength: 255)]
     private ?string $coverText = null;
 
     #[ORM\ManyToOne(inversedBy: 'Books')]
@@ -39,7 +39,7 @@ class Book
 
     #[ORM\Column(type: Types::TEXT)]
     #[Groups(["getBooks", "getAuthors"])]
-    #[OA\Property(type: 'string', description: 'Commentaire de la livre')]
+    #[OA\Property(description: 'Commentaire de la livre', type: 'string')]
     private ?string $comment = null;
 
     public function getId(): ?int

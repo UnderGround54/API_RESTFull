@@ -66,7 +66,5 @@ N
 config/packages/validator.yaml,d/8/d87ace3c9cf646c28e05e6aac383e4fc147f0b74
 S
 #config/packages/nelmio_api_doc.yaml,0/f/0fc6bae2fb1ee325644e97f5ac7691a7dac63753
->
-selfsigned.key,f/8/f886d1416c37b5312ddbe37fe659ceaed0611cf7
->
-selfsigned.crt,a/a/aafaf448063aeb0da91b3941a16ded29bb65e1da
+C
+src/Entity/Book.php,a/b/ab3eee75d94bf55f1a4d63fa10f72f9b39bd799f
