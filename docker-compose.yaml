@@ -19,7 +19,6 @@ services:
     image: mariadb:10.11.6
     container_name: mariadb
     environment:
-      MYSQL_DATABASE: media_planning
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - "3306:3306"
