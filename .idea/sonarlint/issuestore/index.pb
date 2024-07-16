@@ -68,3 +68,11 @@ S
 #config/packages/nelmio_api_doc.yaml,0/f/0fc6bae2fb1ee325644e97f5ac7691a7dac63753
 C
 src/Entity/Book.php,a/b/ab3eee75d94bf55f1a4d63fa10f72f9b39bd799f
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+;
+Jenkinsfile,0/c/0c2c5c506cef0ed2d3ad2b7e45e97980b66f5520
+C
+k8s/deployment.yaml,3/1/31545e6b341be644312efd00ee44417ee587a7cc
+@
+k8s/service.yaml,d/f/df494f0b80a74baa109fadc4f851d2244e52e9e8

@@ -1,23 +1,38 @@
 # Run this app
-### lancer docker
+
+### clone this app
+```
+clone https://github.com/UnderGround54/API_RESTFull.git
+```
+### Create .env.local & add
+DATABASE_URL="mysql://admin:password@container_name_db:3306/database_name?serverVersion=10.11.6-MariaDB&charset=utf8mb4"
+### run docker
 ```
 docker-compose up -d
 ```
-### pour accéder à un shell (bash) interactif dans le conteneur
+### Bash container
 ```
 docker exec -it symfony_app_media_planning bash
 ```
-### Installer dependance
+### Install dependence
 ```
 composer install
 ```
-### Migration base de données
+### Create database
+```
+php bin/console d:d:c
+```
+### Migrate database
 ```
 php bin/console d:m:m
 ```
-### Initialiser donées de base
+### Data fixtures
 ```
 php bin/console d:f:l
 ```
-### Acceder aux application
-[Swagger](http://localhost:9000/api/doc)
+### Generate key JWT
+```
+php bin/console lexik:jwt:generate-keypair
+```
+### Accede in the app
+[api](http://localhost:9000/api/doc)
