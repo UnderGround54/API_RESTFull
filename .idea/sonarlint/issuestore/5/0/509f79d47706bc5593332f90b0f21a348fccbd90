@@ -1,6 +1,5 @@
 
-z	php:S1131D"@Remove the useless trailing whitespaces at the end of this line.(èŸƒCJ$903eb783-524a-4db3-ba16-976c9e1ee764
-€	php:S1131K"@Remove the useless trailing whitespaces at the end of this line.(ŸÀš¦øÿÿÿÿJ$0c1a176f-2fd4-4b46-90e0-0f7a2433bac4
-{	php:S1131U"@Remove the useless trailing whitespaces at the end of this line.(¹ŒÇJ$5479ffe1-5eae-45b2-b9bc-67a0efc45322
-z	php:S1131m"@Remove the useless trailing whitespaces at the end of this line.(Çï¹J$993663cd-4bb4-4f66-8318-248263d15e40
-‹	php:S1192C"PDefine a constant instead of duplicating this literal "/api/books/{id}" 3 times.(¯Ä¸€J$3d7b0b3c-ff02-41c7-935c-fb143dd73105
+’	php:S11926"PDefine a constant instead of duplicating this literal "/api/books/{id}" 6 times.(¯Ä¸€8“íˆ†Œ2J$b12a9329-044d-4834-bdbb-6d4d8451b311
+›	php:S1192&"TDefine a constant instead of duplicating this literal "Successful response" 3 times.(Ÿ¯Ãœøÿÿÿÿ8“íˆ†Œ2J$c8ac7315-0cbc-450a-9959-68c79190996d
+Œ	php:S1192E"JDefine a constant instead of duplicating this literal "Not Found" 3 times.(¸“åÜ8“íˆ†Œ2J$ebeb658b-ce98-41bd-a91f-dbb4a169513e
+’	php:S1192"KDefine a constant instead of duplicating this literal "/api/books" 4 times.(ÿÀ“Øûÿÿÿÿ8êãüŒ2J$a8496d94-c040-40ba-b70b-f4311b86f05d

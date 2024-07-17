@@ -16,30 +16,30 @@ class Book
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(["getBooks", "getAuthors"])]
+    #[Groups(["getBooks", "createBook"])]
     #[OA\Property(description: 'Identifiant de livre')]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(["getBooks", "getAuthors"])]
+    #[Groups(["getBooks", "createBook"])]
     #[Assert\NotBlank(message: "Le titre du livre est obligatoire")]
     #[Assert\Length(min: 1, max: 255, minMessage: "Le titre doit faire au moins {{ limit }} caractères", maxMessage: "Le titre ne peut pas faire plus de {{ limit }} caractères")]
     #[OA\Property(description: 'Titre du livre', type: 'string', maxLength: 255)]
     private ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(["getBooks", "getAuthors"])]
-    #[OA\Property(description: 'Couveture du livre', type: 'string', maxLength: 255)]
+    #[Groups(["getBooks", "createBook"])]
+    #[OA\Property(description: 'Couverture du livre', type: 'string', maxLength: 255)]
     private ?string $coverText = null;
 
     #[ORM\ManyToOne(inversedBy: 'Books')]
-    #[Groups(["getBooks"])]
-    #[OA\Property(ref: new Model(type: Author::class))]
+    #[Groups(["getBooks", "createBook"])]
+    #[OA\Property(ref: new Model(type: Author::class, groups: ["createBook"]))]
     private ?Author $author = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    #[Groups(["getBooks", "getAuthors"])]
-    #[OA\Property(description: 'Commentaire de la livre', type: 'string')]
+    #[Groups(["getBooks", "createBook"])]
+    #[OA\Property(description: 'Commentaire du livre', type: 'string')]
     private ?string $comment = null;
 
     public function getId(): ?int
